@@ -1,0 +1,285 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff6d83c0c4, pid=3020, tid=11620
+#
+# JRE version: OpenJDK Runtime Environment Temurin-17.0.5+8 (17.0.5+8) (build 17.0.5+8)
+# Java VM: OpenJDK 64-Bit Server VM Temurin-17.0.5+8 (17.0.5+8, mixed mode, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [cyjagent.dll+0xc0c4]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/adoptium/adoptium-support/issues
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages -agentpath:C:\Program Files\Palo Alto Networks\Traps\cyjagent.dll seleniumtutorialtestpackage.FirstTest
+
+Host: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.2251)
+Time: Thu Dec 22 00:46:32 2022 Central Standard Time elapsed time: 5.347102 seconds (0d 0h 0m 5s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000190070bf210):  JavaThread "AsyncHttpClient-1-4" daemon [_thread_in_native, id=11620, stack(0x0000002da8900000,0x0000002da8a00000)]
+
+Stack: [0x0000002da8900000,0x0000002da8a00000],  sp=0x0000002da89fd000,  free space=1012k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [cyjagent.dll+0xc0c4]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 1118  java.lang.ClassLoader.defineClass1(Ljava/lang/ClassLoader;Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; java.base@17.0.5 (0 bytes) @ 0x0000019071391463 [0x00000190713913a0+0x00000000000000c3]
+J 1379 c1 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; java.base@17.0.5 (43 bytes) @ 0x000001906a0820dc [0x000001906a081d80+0x000000000000035c]
+J 1463 c1 java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class; java.base@17.0.5 (16 bytes) @ 0x000001906a0bd28c [0x000001906a0bd1c0+0x00000000000000cc]
+J 1403 c1 jdk.internal.loader.BuiltinClassLoader.defineClass(Ljava/lang/String;Ljdk/internal/loader/Resource;)Ljava/lang/Class; java.base@17.0.5 (121 bytes) @ 0x000001906a092574 [0x000001906a091600+0x0000000000000f74]
+J 1343 c1 jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(Ljava/lang/String;)Ljava/lang/Class; java.base@17.0.5 (64 bytes) @ 0x000001906a06d8e4 [0x000001906a06c860+0x0000000000001084]
+J 1036 c1 jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(Ljava/lang/String;Z)Ljava/lang/Class; java.base@17.0.5 (143 bytes) @ 0x0000019069fb51d4 [0x0000019069fb42c0+0x0000000000000f14]
+J 1133 c1 jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; java.base@17.0.5 (40 bytes) @ 0x0000019069ff3bfc [0x0000019069ff35e0+0x000000000000061c]
+J 1060 c1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; java.base@17.0.5 (7 bytes) @ 0x0000019069fc4a4c [0x0000019069fc4940+0x000000000000010c]
+v  ~StubRoutines::call_stub
+j  io.netty.util.concurrent.AbstractEventExecutor.newSucceededFuture(Ljava/lang/Object;)Lio/netty/util/concurrent/Future;+0
+j  org.asynchttpclient.netty.ws.NettyWebSocket.sendCloseFrame(ILjava/lang/String;)Lio/netty/util/concurrent/Future;+35
+j  org.asynchttpclient.netty.ws.NettyWebSocket.sendCloseFrame()Lio/netty/util/concurrent/Future;+6
+j  org.asynchttpclient.netty.handler.WebSocketHandler.handleException(Lorg/asynchttpclient/netty/NettyResponseFuture;Ljava/lang/Throwable;)V+27
+j  org.asynchttpclient.netty.handler.AsyncHttpClientHandler.exceptionCaught(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V+234
+j  io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(Ljava/lang/Throwable;)V+13
+j  io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(Lio/netty/channel/AbstractChannelHandlerContext;Ljava/lang/Throwable;)V+23
+j  io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(Ljava/lang/Throwable;)Lio/netty/channel/ChannelHandlerContext;+6
+j  io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V+2
+j  io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(Ljava/lang/Throwable;)V+13
+j  io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(Lio/netty/channel/AbstractChannelHandlerContext;Ljava/lang/Throwable;)V+23
+j  io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(Ljava/lang/Throwable;)Lio/netty/channel/ChannelPipeline;+5
+j  io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(Lio/netty/channel/ChannelPipeline;Lio/netty/buffer/ByteBuf;Ljava/lang/Throwable;ZLio/netty/channel/RecvByteBufAllocator$Handle;)V+51
+j  io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read()V+240
+j  io.netty.channel.nio.NioEventLoop.processSelectedKey(Ljava/nio/channels/SelectionKey;Lio/netty/channel/nio/AbstractNioChannel;)V+110
+j  io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized()V+51
+j  io.netty.channel.nio.NioEventLoop.processSelectedKeys()V+8
+j  io.netty.channel.nio.NioEventLoop.run()V+263
+j  io.netty.util.concurrent.SingleThreadEventExecutor$4.run()V+44
+j  io.netty.util.internal.ThreadExecutorMap$2.run()V+11
+j  io.netty.util.concurrent.FastThreadLocalRunnable.run()V+4
+j  java.lang.Thread.run()V+11 java.base@17.0.5
+v  ~StubRoutines::call_stub
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x0000000000000000
+
+
+Register to memory mapping:
+
+RIP=0x00007fff6d83c0c4 cyjagent.dll
+RAX=0x0 is NULL
+RBX=0x00000190070bf4b8 points into unknown readable memory: 0x00007ffeeed9d7d0 | d0 d7 d9 ee fe 7f 00 00
+RCX=0x0 is NULL
+RDX=0x000001906408e2a0 points into unknown readable memory: 0x00000190070bf210 | 10 f2 0b 07 90 01 00 00
+RSP=0x0000002da89fd000 is pointing into the stack for thread: 0x00000190070bf210
+RBP=0x000001906983f8d0 points into unknown readable memory: 0x0000019069751bf0 | f0 1b 75 69 90 01 00 00
+RSI=0x0 is NULL
+RDI=0x00000190065f5050 points into unknown readable memory: 0x797474656e2f6f69 | 69 6f 2f 6e 65 74 74 79
+R8 =0x0000002da89fce78 is pointing into the stack for thread: 0x00000190070bf210
+R9 =0x000001906983f8d0 points into unknown readable memory: 0x0000019069751bf0 | f0 1b 75 69 90 01 00 00
+R10=0x0 is NULL
+R11=0x0000000000000246 is an unknown value
+R12=0x00000007040ac200 is an oop: jdk.internal.loader.ClassLoaders$AppClassLoader 
+{0x00000007040ac200} - klass: 'jdk/internal/loader/ClassLoaders$AppClassLoader'
+ - ---- fields (total size 13 words):
+ - private 'defaultAssertionStatus' 'Z' @12  false
+ - private final 'parent' 'Ljava/lang/ClassLoader;' @24  a 'jdk/internal/loader/ClassLoaders$PlatformClassLoader'{0x00000007040e24e8} (e081c49d)
+ - private final 'name' 'Ljava/lang/String;' @28  "app"{0x0000000703eabfe8} (e07d57fd)
+ - private final 'unnamedModule' 'Ljava/lang/Module;' @32  a 'java/lang/Module'{0x00000007040d0b58} (e081a16b)
+ - private final 'nameAndId' 'Ljava/lang/String;' @36  "'app'"{0x0000000703eabfb8} (e07d57f7)
+ - private final 'parallelLockMap' 'Ljava/util/concurrent/ConcurrentHashMap;' @40  a 'java/util/concurrent/ConcurrentHashMap'{0x0000000703e8a918} (e07d1523)
+ - private final 'package2certs' 'Ljava/util/concurrent/ConcurrentHashMap;' @44  a 'java/util/concurrent/ConcurrentHashMap'{0x0000000703e5c158} (e07cb82b)
+ - private final 'classes' 'Ljava/util/ArrayList;' @48  a 'java/util/ArrayList'{0x0000000703e5bd60} (e07cb7ac)
+ - private final 'defaultDomain' 'Ljava/security/ProtectionDomain;' @52  a 'java/security/ProtectionDomain'{0x0000000703e5bcf0} (e07cb79e)
+ - private final 'packages' 'Ljava/util/concurrent/ConcurrentHashMap;' @56  a 'java/util/concurrent/ConcurrentHashMap'{0x0000000703e5a550} (e07cb4aa)
+ - private final 'libraries' 'Ljdk/internal/loader/NativeLibraries;' @60  a 'jdk/internal/loader/NativeLibraries'{0x0000000703e5a4f0} (e07cb49e)
+ - final 'assertionLock' 'Ljava/lang/Object;' @64  a 'java/lang/Object'{0x0000000703e5a4e0} (e07cb49c)
+ - private 'packageAssertionStatus' 'Ljava/util/Map;' @68  NULL (0)
+ - 'classAssertionStatus' 'Ljava/util/Map;' @72  NULL (0)
+ - private volatile 'classLoaderValueMap' 'Ljava/util/concurrent/ConcurrentHashMap;' @76  a 'java/util/concurrent/ConcurrentHashMap'{0x0000000703e5a370} (e07cb46e)
+ - private final 'pdcache' 'Ljava/util/Map;' @80  a 'java/util/concurrent/ConcurrentHashMap'{0x0000000703e59fc8} (e07cb3f9)
+ - private final 'parent' 'Ljdk/internal/loader/BuiltinClassLoader;' @84  a 'jdk/internal/loader/ClassLoaders$PlatformClassLoader'{0x00000007040e24e8} (e081c49d)
+ - private synchronized 'ucp' 'Ljdk/internal/loader/URLClassPath;' @88  a 'jdk/internal/loader/URLClassPath'{0x00000007040ac4a8} (e0815895)
+ - private final 'nameToModule' 'Ljava/util/Map;' @92  a 'java/util/concurrent/ConcurrentHashMap'{0x00000007050aa588} (e0a154b1)
+ - private final 'moduleToReader' 'Ljava/util/Map;' @96  a 'java/util/concurrent/ConcurrentHashMap'{0x00000007050aa090} (e0a15412)
+ - private volatile 'resourceCache' 'Ljava/lang/ref/SoftReference;' @100  a 'java/lang/ref/SoftReference'{0x00000007050a9db8} (e0a153b7)
+R13=0x000001906413de30 points into unknown readable memory: 0x00007ffeeeda6c20 | 20 6c da ee fe 7f 00 00
+R14=0x0000002da89fd250 is pointing into the stack for thread: 0x00000190070bf210
+R15=0x0000019007450f88 points into unknown readable memory: 0x00000007040ac200 | 00 c2 0a 04 07 00 00 00
+
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00000190070bf4b8, RCX=0x0000000000000000, RDX=0x000001906408e2a0
+RSP=0x0000002da89fd000, RBP=0x000001906983f8d0, RSI=0x0000000000000000, RDI=0x00000190065f5050
+R8 =0x0000002da89fce78, R9 =0x000001906983f8d0, R10=0x0000000000000000, R11=0x0000000000000246
+R12=0x00000007040ac200, R13=0x000001906413de30, R14=0x0000002da89fd250, R15=0x0000019007450f88
+RIP=0x00007fff6d83c0c4, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x0000002da89fd000)
+0x0000002da89fd000:   00000190065f5050 00000190070bf4b8
+0x0000002da89fd010:   00000000ffffffff 00007ffeee6a88de
+0x0000002da89fd020:   0000002da89fe4f0 0000000000000001
+0x0000002da89fd030:   00000190077540d0 000001906983f8d0
+0x0000002da89fd040:   00000190070bf210 000001906413de30
+0x0000002da89fd050:   00000190070bf210 000001906413de30
+0x0000002da89fd060:   00000190070bf210 00007ffeee7c2c76
+0x0000002da89fd070:   000001906413de30 0000002da89fd170
+0x0000002da89fd080:   0000000000000000 00000190070bf210
+0x0000002da89fd090:   00000190065f5050 0000019007450f90
+0x0000002da89fd0a0:   000001900000049b 00000190070bf6e0
+0x0000002da89fd0b0:   0000002da89fd1e8 0000002da89fd0c0
+0x0000002da89fd0c0:   0000000000000000 00007ffeee4c4478
+0x0000002da89fd0d0:   00000190070bf210 00000190070bf4b8
+0x0000002da89fd0e0:   0000000000000000 0000019007450f80
+0x0000002da89fd0f0:   00000190065f5050 0000019007450f88 
+
+Instructions: (pc=0x00007fff6d83c0c4)
+0x00007fff6d83bfc4:   00 00 03 72 2d 44 8b ce 48 8d 05 3d e1 01 00 ba
+0x00007fff6d83bfd4:   2f 00 00 00 4e 8b 0c c8 48 8b 89 50 02 00 00 4c
+0x00007fff6d83bfe4:   8d 05 56 e0 01 00 e8 51 51 ff ff 48 8b 0d ea 39
+0x00007fff6d83bff4:   02 00 48 3b cb 74 68 f6 81 5c 02 00 00 10 74 5f
+0x00007fff6d83c004:   80 b9 59 02 00 00 02 72 56 4c 8b 8c 24 90 00 00
+0x00007fff6d83c014:   00 4c 8d 05 24 e0 01 00 48 8b 89 50 02 00 00 ba
+0x00007fff6d83c024:   31 00 00 00 e8 13 51 ff ff eb 34 49 8b 0f 4c 8b
+0x00007fff6d83c034:   c3 48 8b d6 e8 c3 63 00 00 48 8b 84 24 b0 00 00
+0x00007fff6d83c044:   00 89 18 48 8b 0d 6a 4d 02 00 4c 8b c6 33 d2 ff
+0x00007fff6d83c054:   15 87 51 01 00 eb 08 a8 02 75 04 c6 47 40 01 b8
+0x00007fff6d83c064:   ff ff ff ff f0 0f c1 47 10 4c 8b b4 24 88 00 00
+0x00007fff6d83c074:   00 83 f8 01 75 42 48 8b 4f 18 48 81 c1 70 01 00
+0x00007fff6d83c084:   00 ff 15 1d 52 01 00 48 8b 0f 48 8b 47 08 48 89
+0x00007fff6d83c094:   08 48 89 41 08 48 8b 4f 18 48 81 c1 70 01 00 00
+0x00007fff6d83c0a4:   ff 15 06 52 01 00 48 8b 0d 07 4d 02 00 4c 8b c7
+0x00007fff6d83c0b4:   33 d2 ff 15 24 51 01 00 48 8b 4d 20 48 8b 55 10
+0x00007fff6d83c0c4:   48 8b 01 48 8b 80 08 01 00 00 ff 15 0c 52 01 00
+0x00007fff6d83c0d4:   85 c0 74 40 48 8b 0d 01 39 02 00 48 8d 15 fa 38
+0x00007fff6d83c0e4:   02 00 48 3b ca 74 2d f6 81 5c 02 00 00 10 74 24
+0x00007fff6d83c0f4:   80 b9 59 02 00 00 03 72 1b 48 8b 89 50 02 00 00
+0x00007fff6d83c104:   4c 8d 05 35 df 01 00 ba 15 00 00 00 44 8b c8 e8
+0x00007fff6d83c114:   68 4f ff ff 48 8b 6c 24 78 48 8b b4 24 80 00 00
+0x00007fff6d83c124:   00 48 83 c4 50 41 5f 5f 5b c3 cc cc 40 57 48 83
+0x00007fff6d83c134:   ec 30 f6 81 78 01 00 00 04 48 8b f9 0f 85 87 02
+0x00007fff6d83c144:   00 00 48 89 5c 24 40 45 33 c9 48 89 6c 24 48 33
+0x00007fff6d83c154:   d2 48 89 74 24 50 48 8b 71 20 45 8d 41 32 48 8b
+0x00007fff6d83c164:   ce 48 8b 06 48 8b 40 08 ff 15 6e 51 01 00 48 8d
+0x00007fff6d83c174:   2d 67 38 02 00 85 c0 74 37 48 8b 0d 5c 38 02 00
+0x00007fff6d83c184:   48 3b cd 74 2b f6 81 5c 02 00 00 10 74 22 80 b9
+0x00007fff6d83c194:   59 02 00 00 02 72 19 48 8b 89 50 02 00 00 ba 11
+0x00007fff6d83c1a4:   00 00 00 89 44 24 20 44 8d 4a 21 e8 7c dc ff ff
+0x00007fff6d83c1b4:   48 8b 06 45 33 c9 33 d2 48 8b ce 48 8b 40 08 45 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x00000190065f5050 points into unknown readable memory: 0x797474656e2f6f69 | 69 6f 2f 6e 65 74 74 79
+stack at sp + 1 slots: 0x00000190070bf4b8 points into unknown readable memory: 0x00007ffeeed9d7d0 | d0 d7 d9 ee fe 7f 00 00
+stack at sp + 2 slots: 0x00000000ffffffff is an unknown value
+stack at sp + 3 slots: 0x00007ffeee6a88de jvm.dll
+stack at sp + 4 slots: 0x0000002da89fe4f0 is pointing into the stack for thread: 0x00000190070bf210
+stack at sp + 5 slots: 0x0000000000000001 is an unknown value
+stack at sp + 6 slots: 0x00000190077540d0 points into unknown readable memory: 0x6f6900288fe40002 | 02 00 e4 8f 28 00 69 6f
+stack at sp + 7 slots: 0x000001906983f8d0 points into unknown readable memory: 0x0000019069751bf0 | f0 1b 75 69 90 01 00 00
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00000190090319c0, length=23, elements={
+0x000001907fc8f620, 0x000001907fc94460, 0x000001907fcb64d0, 0x000001907fcb6f90,
+0x000001907fcbb960, 0x000001907fcbc310, 0x000001907fccc5c0, 0x000001907fccec80,
+0x000001907fccf280, 0x000001907fe47a40, 0x000001907fe60030, 0x00000190068a3710,
+0x0000019006c36340, 0x0000019007638d70, 0x0000019006028600, 0x0000019007026860,
+0x0000019006d29310, 0x00000190070c21d0, 0x000001900769a570, 0x00000190070bded0,
+0x00000190070bed40, 0x00000190070c13c0, 0x00000190070bf210
+}
+
+Java Threads: ( => current thread )
+  0x000001907fc8f620 JavaThread "Reference Handler" daemon [_thread_blocked, id=7756, stack(0x0000002da6700000,0x0000002da6800000)]
+  0x000001907fc94460 JavaThread "Finalizer" daemon [_thread_blocked, id=18020, stack(0x0000002da6800000,0x0000002da6900000)]
+  0x000001907fcb64d0 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1480, stack(0x0000002da6900000,0x0000002da6a00000)]
+  0x000001907fcb6f90 JavaThread "Attach Listener" daemon [_thread_blocked, id=14560, stack(0x0000002da6a00000,0x0000002da6b00000)]
+  0x000001907fcbb960 JavaThread "Service Thread" daemon [_thread_blocked, id=6064, stack(0x0000002da6b00000,0x0000002da6c00000)]
+  0x000001907fcbc310 JavaThread "Monitor Deflation Thread" daemon [_thread_blocked, id=19488, stack(0x0000002da6c00000,0x0000002da6d00000)]
+  0x000001907fccc5c0 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=2572, stack(0x0000002da6d00000,0x0000002da6e00000)]
+  0x000001907fccec80 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=17044, stack(0x0000002da6e00000,0x0000002da6f00000)]
+  0x000001907fccf280 JavaThread "Sweeper thread" daemon [_thread_blocked, id=2036, stack(0x0000002da6f00000,0x0000002da7000000)]
+  0x000001907fe47a40 JavaThread "Notification Thread" daemon [_thread_blocked, id=6960, stack(0x0000002da7000000,0x0000002da7100000)]
+  0x000001907fe60030 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=13300, stack(0x0000002da7200000,0x0000002da7300000)]
+  0x00000190068a3710 JavaThread "ForkJoinPool.commonPool-worker-1" daemon [_thread_blocked, id=18824, stack(0x0000002da7d00000,0x0000002da7e00000)]
+  0x0000019006c36340 JavaThread "AsyncHttpClient-1-1" daemon [_thread_blocked, id=12312, stack(0x0000002da7e00000,0x0000002da7f00000)]
+  0x0000019007638d70 JavaThread "Exec Default Executor" daemon [_thread_in_native, id=18108, stack(0x0000002da8000000,0x0000002da8100000)]
+  0x0000019006028600 JavaThread "Exec Stream Pumper" daemon [_thread_in_native, id=15112, stack(0x0000002da7400000,0x0000002da7500000)]
+  0x0000019007026860 JavaThread "Exec Stream Pumper" daemon [_thread_in_native, id=13108, stack(0x0000002da8100000,0x0000002da8200000)]
+  0x0000019006d29310 JavaThread "Driver Service Executor" daemon [_thread_blocked, id=20304, stack(0x0000002da8200000,0x0000002da8300000)]
+  0x00000190070c21d0 JavaThread "Driver Service Executor" daemon [_thread_blocked, id=13640, stack(0x0000002da8300000,0x0000002da8400000)]
+  0x000001900769a570 JavaThread "UrlChecker-2" daemon [_thread_blocked, id=16996, stack(0x0000002da8400000,0x0000002da8500000)]
+  0x00000190070bded0 JavaThread "Keep-Alive-Timer" daemon [_thread_blocked, id=5012, stack(0x0000002da7300000,0x0000002da7400000)]
+  0x00000190070bed40 JavaThread "AsyncHttpClient-1-2" daemon [_thread_in_native, id=18024, stack(0x0000002da8700000,0x0000002da8800000)]
+  0x00000190070c13c0 JavaThread "AsyncHttpClient-1-3" daemon [_thread_in_native, id=7308, stack(0x0000002da8800000,0x0000002da8900000)]
+=>0x00000190070bf210 JavaThread "AsyncHttpClient-1-4" daemon [_thread_in_native, id=11620, stack(0x0000002da8900000,0x0000002da8a00000)]
+
+Other Threads:
+  0x000001907fc6c1f0 VMThread "VM Thread" [stack: 0x0000002da6600000,0x0000002da6700000] [id=8820] _threads_hazard_ptr=0x00000190090319c0
+  0x00000190647a2ba0 GCTaskThread "GC Thread#0" [stack: 0x0000002da6100000,0x0000002da6200000] [id=7356]
+  0x00000190066e8e70 GCTaskThread "GC Thread#1" [stack: 0x0000002da7500000,0x0000002da7600000] [id=12756]
+  0x00000190066e9120 GCTaskThread "GC Thread#2" [stack: 0x0000002da7600000,0x0000002da7700000] [id=19508]
+  0x0000019006413f90 GCTaskThread "GC Thread#3" [stack: 0x0000002da7700000,0x0000002da7800000] [id=20024]
+  0x0000019006414240 GCTaskThread "GC Thread#4" [stack: 0x0000002da7800000,0x0000002da7900000] [id=9280]
+  0x0000019006b18030 GCTaskThread "GC Thread#5" [stack: 0x0000002da7900000,0x0000002da7a00000] [id=19968]
+  0x0000019006c3cb80 GCTaskThread "GC Thread#6" [stack: 0x0000002da7a00000,0x0000002da7b00000] [id=7596]
+  0x0000019006b186e0 GCTaskThread "GC Thread#7" [stack: 0x0000002da7b00000,0x0000002da7c00000] [id=19048]
+  0x00000190647b36f0 ConcurrentGCThread "G1 Main Marker" terminated
+  0x00000190647b6c90 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000002da6300000,0x0000002da6400000] [id=13208]
+  0x0000019006ecf270 ConcurrentGCThread "G1 Conc#1" [stack: 0x0000002da7f00000,0x0000002da8000000] [id=20036]
+  0x000001907eda29b0 ConcurrentGCThread "G1 Refine#0" terminated
+  0x0000019006d18680 ConcurrentGCThread "G1 Refine#1" terminated
+  0x000001907eda4090 ConcurrentGCThread "G1 Service" terminated
+
+Threads with active compile tasks:
+C2 CompilerThread0     5812 2014       4       java.io.DataInputStream::readUTF (501 bytes)
+
+VM state: at safepoint (shutting down)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000190647365b0] Threads_lock - owner thread: 0x000001907fc6c1f0
+
+Heap address: 0x0000000703e00000, size: 4034 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) not mapped
+Compressed class space mapped at: 0x0000000800000000-0x0000000840000000, reserved size: 1073741824
+Narrow klass base: 0x0000000800000000, Narrow klass shift: 0, Narrow klass range: 0x40000000
+
+GC Precious Log:
+ CPUs: 8 total, 8 available
+ Memory: 16134M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (Zero based)
+ Heap Region Size: 2M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 254M
+ Heap Max Capacity: 4034M
+ Pre-touch: Disabled
+ Parallel Workers: 8
+ Concurrent Workers: 2
+ Concurrent Refinement Workers: 8
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total 55296K, used 21132K [0x0000000703e00000, 0x0000000800000000)
+  region size 2048K, 3 young (6144K), 1 survivors (2048K)
+ Metaspace       used 28136K, committed 28288K, reserved 1081344K
+  class space    used 3146K, committed 3200K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, OA=open archive, CA=closed archive, TAMS=top-at-mark-start (previous, next)
+|   0|0x0000000703e00000, 0x0000000704000000, 0x0000000704000000|100%| O|  |TAMS 0x0000000704000000, 0x0000000703e00000| Untracked 
+|   1|0x0000000704000000, 0x0000000704200000, 0x0000000704200000|100%| O|  |TAMS 0x0000000704200000, 0x0000000704000000| Untracked 
+|   2|0x0000000704200000, 0x0000000704400000, 0x0000000704400000|100%| O|  |TAMS 0x0000000704400000, 0x0000000704200000| Untracked 
+|   3|0x0000000704400000, 0x0000000704400000, 0x0000000704600000|  0%| F|  |TAMS 0x0000000704400000, 0x0000000704400000| Untracked 
+|   4|0x0000000704600000, 0x0000000704800000, 0x0000000704800000|100%|HS|  |TAMS 0x0000000704600000, 0x0000000704600000| Complete 
+|   5|0x0000000704800000, 0x0000000704a00000, 0x0000000704a00000|100%|HC|  |TAMS 0x0000000704800000, 0x0000000704800000| Complete 
+|   6|0x0000000704a00000, 0x0000000704c00000, 0x0000000704c00000|100%|HC|  |TAMS 0x0000000704a00000, 0x0000000704a00000| Complete 
+|   7|0x0000000704c00000, 0x0000000704e00000, 0x0000000704e00000|100%| O|  |TAMS 0x0000000704c00000, 0x0000000704c00000| Untracked 
+|   8|0x0000000704e00000, 0x0000000705000000, 0x0000000705000000|100%
